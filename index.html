@@ -5,32 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de contraseñas</title>
     <!-- Script js -->
+    <link rel = "stylesheet" href = "css/style.css">
+    <script src = "js/api.js" defer></script>
     <script src = "js/index.js" defer></script>
 </head>
 <body>
 
-    <h1>Gestor de contraseñas</h1>
+    <header>
+        <h1>Pass Saver</h1>
+    </header>
 
-    <!-- Categorias -->
+    <!-- Botones -->
     <div>
-        <h2>Categorias</h2>
-        <ul></ul>
+        <button id = "btn-add-category">Add Category</button>
     </div>
 
-    <!-- Tabla de sitios -->
-     <div>
-        <h2>Sitios</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Sitio</th>
-                    <th>Usuario</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-     </div>
+    <main>
+        <!-- Columna izq Lista de las categorias -->
+        <aside>
+            <h2>Categories</h2>
+            <ul id = "categories-list"></ul>
+        </aside>
+
+        <!-- Columna drch Tabla de sitios -->
+         <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sitio</th>
+                        <th>User</th>
+                        <th>Created at</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id = "sites-tbody">
+                    <tr>
+                        <td colspan = "4">Selecciona una categoria para ver los sitios.</td>
+                    </tr>
+                </tbody>
+            </table>
+         </section>
+
+         <!-- Modal para añadir la categoria -->
+        <dialog id = "dialog-category">
+            <form id = "form-category">
+                <h3>Nueva categoria</h3>
+                    <div>
+                        <label for = "category-name">Nombre: </label>
+                        <input type = "text" id = "category-name" required>
+                    </div>
+                    <div>
+                        <button type = "button" id = "btn-cancel-category">Cancelar</button>
+                        <button type  ="submit">Ok</button>
+                    </div>
+            </form>
+        </dialog>
+    </main>
     
 </body>
 </html>
