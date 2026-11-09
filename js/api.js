@@ -31,8 +31,8 @@ class api {
     }
 
     // POST site
-    async createSite(siteData) {
-        const res = await fetch(`${this.baseurl}/sites`, {
+    async createSite(categoryId, siteData) {
+        const res = await fetch(this.baseurl + '/categories/' +  categoryId, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(siteData)
