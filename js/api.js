@@ -23,4 +23,10 @@ class api {
     async deleteCategory(id) {
         await fetch(`${this.baseurl}/categories/${id}`, { method: 'DELETE' })
     }
+
+    // Get sitios de la categoria
+    async getByCategory(categoryId) {
+        const res = await fetch(this.baseurl + '/categories/' + categoryId)
+        return await res.json()
+    }
 }
