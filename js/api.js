@@ -39,4 +39,9 @@ class api {
         })
         return await res.json()
     }
+
+    // DELETE sites
+    async deleteSite(id) {
+        await fetch(`${this.baseurl}/sites/${id}`, { method: 'DELETE' })
+    }
 }
